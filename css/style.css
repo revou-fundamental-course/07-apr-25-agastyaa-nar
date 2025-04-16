@@ -308,6 +308,40 @@ footer p {
   border-top: 1px solid #3e5a72;
 }
 
+/* Smooth Scroll */
 html {
     scroll-behavior: smooth;
 }
+
+/* Responsive Design */
+
+.menu-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      align-self: flex-end;
+    }
+  
+    nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    nav.active {
+      display: flex;
+    }
+
+    body.nav-open .main-logo {
+        display: none;
+    }
+  }
+  
