@@ -79,3 +79,28 @@ function toggleMenu() {
   nav.classList.toggle("active");
   body.classList.toggle("nav-open");
 }
+
+// Banner Autoslide
+let indexBanner = 0;
+
+function nextBanner() {
+  indexBanner += 1;
+  showBanner();
+}
+
+function showBanner() {
+  const bannerList = document.getElementsByClassName('banner-img');
+
+  if (indexBanner >= bannerList.length) {
+    indexBanner = 0;
+  }
+
+  for (let i = 0; i < bannerList.length; i++) {
+    bannerList[i].classList.remove('active');
+  }
+
+  bannerList[indexBanner].classList.add('active');
+}
+
+showBanner();
+setInterval(nextBanner, 3000);
